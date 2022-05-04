@@ -31,6 +31,8 @@ trait TransparentProperties
 
 	/**
 	 * @return iterable<int, string>
+	 *
+	 * @param string $name
 	 */
 	protected function buildPropertyNames(string $name): iterable
 	{
@@ -46,8 +48,7 @@ trait TransparentProperties
 	{
 		$getProperty = null;
 
-		foreach ($this->buildGetterPrefixes() as $prefix)
-		{
+		foreach ($this->buildGetterPrefixes() as $prefix) {
 			if (!str_starts_with($name, $prefix)) {
 				continue;
 			}
@@ -67,8 +68,7 @@ trait TransparentProperties
 
 		$setProperty = null;
 
-		foreach ($this->buildSetterPrefixes() as $prefix)
-		{
+		foreach ($this->buildSetterPrefixes() as $prefix) {
 			if (!str_starts_with($name, $prefix)) {
 				continue;
 			}
